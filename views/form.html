@@ -3,25 +3,37 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-sm-6">
-				<form action="insert.php" method="post">
+				<form action="insert.php" method="post" class="form-horizontal" role="form">
 
 					<div class="form-group">
-						<label for="InputName">Name</label>
-						<input name="InputName" placeholder="Name">
+						<label for="InputName" class="col-sm-3 control-label">Name</label>
+						<div class="col-sm-9">
+							<input name="InputName" class="form-control" placeholder="Name">
+						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="InputEmail">Email</label>
-						<input name="InputEmail" placeholder="Email">
+						<label for="InputEmail" class="col-sm-3 control-label">Email</label>
+						<div class="col-sm-9">
+							<input name="InputEmail" type="email" class="form-control" placeholder="Email">
+						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="InputPhone">Phone</label>
-						<input name="InputPhone" placeholder="Phone nr">
+						<label for="InputPhone" class="col-sm-3 control-label">Phone</label>
+						<div class="col-sm-9">
+							<input name="InputPhone" class="form-control" placeholder="Phone nr">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="InputFaceb" class="col-sm-3 control-label">Facebook</label>
+						<div class="col-sm-9">
+							<input name="InputFaceb" class="form-control" placeholder="Your facebook">
+						</div>
 					</div>
 				
 					<div class="form-group">
-						<label for="InputAbout">About</label>
+						<label for="InputAbout" class="col-sm-3 control-label">About</label>
 						<textarea class="form-control" name="InputAbout"  rows="4" placeholder="What do you do?"></textarea>
 					</div>
 

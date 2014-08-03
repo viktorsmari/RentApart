@@ -19,9 +19,9 @@
 		'areacode' => '101',
 		'street' => 'Njalsgata',
 		'size' => '80',
-		'price' => '170.000'
+		'price' => '170.000',
+		'availdate' => '2014-09-01',
 	);
-
 
 	echo $twig->render('rentinfo.html', $apartment); 
 	echo $twig->render('form.html'); 

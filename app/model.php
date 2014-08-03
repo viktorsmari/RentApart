@@ -39,4 +39,17 @@
 		return $row;
 	}
 
+	function upvote_by_id($id){
+		$link = open_database_connection();
+		$query = 'UPDATE applicants SET rating = rating + 1 WHERE id = '.$id;
+		$result = mysql_query($query);
+		close_database_connection($link);
+	}
+
+	function downvote_by_id($id){
+		$link = open_database_connection();
+		$query = 'UPDATE applicants SET rating = rating - 1 WHERE id = '.$id;
+		$result = mysql_query($query);
+		close_database_connection($link);
+	}
 ?>
