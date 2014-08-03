@@ -9,9 +9,8 @@
 	require_once 'model.php';
 	$posts = get_all_posts();
 
-	$numb = 0;  // Counter for number of applicants.
-
 	// Using old PHP method. 
+/*
 	echo "<table style='width:500px' border='1'>";
 	echo "<thead><tr><th>Name</th><th>Phone</th><th>About</th></tr></thead>";
 	foreach ($posts as $value) {
@@ -22,11 +21,8 @@
 	}
 	echo "</table>";
 	echo "Number of applicants so far: " . $numb . "<br/>";
+*/
 
-	// print_r($posts);
-	// echo gettype($posts);
+	echo $twig->render('list.html', array('posts' => $posts )); 
 
-	// $posts = array('id' => 1, 'email' => 'l@l.is');
-
-	echo $twig->render('list.html', $posts); 
 ?>
