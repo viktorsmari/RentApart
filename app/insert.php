@@ -6,8 +6,8 @@
 	$safe_about = mysql_real_escape_string($_POST["InputAbout"]);
 	// The other way would be to use prepared statements or use PDO
 
-	// PHP email validation. I guess I would do that one client side using JS
-	if (filter_var($safe_email, FILTER_VALIDATE_EMAIL) === false){
+	// Testing PHP email validation. Also using client side html5 validation
+	if (filter_var($safe_email, FILTER_VALIDATE_EMAIL) == false){
 		echo "Email was not in the correct form! </br>";
 		// But we still continue...
 	}
