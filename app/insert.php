@@ -7,12 +7,12 @@
 	// The other way would be to use prepared statements or use PDO
 
 	// PHP email validation. I guess I would do that one client side using JS
-	if (filter_var($safe_email, FILTER_VALIDATE_EMAIL) == false){
+	if (filter_var($safe_email, FILTER_VALIDATE_EMAIL) === false){
 		echo "Email was not in the correct form! </br>";
 		// But we still continue...
 	}
 
-	// Connect  
+	// Connect 
 	$con = mysqli_connect('localhost', 'rentmaster', 'rentmaster', 'rent');
 
 	// Check if connection is successful
@@ -21,8 +21,9 @@
 	}
 
 	// SQL Commands
-	$sql = "INSERT INTO applicants (name,email,phone,about) VALUES ('$safe_name' , '$safe_email', '$safe_phone', '$safe_about') ";
+	$sql = "INSERT INTO applicants (name,email,phone,about,rating) VALUES ('$safe_name' , '$safe_email', '$safe_phone', '$safe_about',0) ";
 
+	// Make query and post if error
 	if (mysqli_query($con, $sql)){
 		echo "Your submission has been received " . $safe_name;
 	} else {

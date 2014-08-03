@@ -1,4 +1,4 @@
-phptest
+RentApart
 =======
 
 House renting system which uses the Twig template engine

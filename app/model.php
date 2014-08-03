@@ -15,7 +15,7 @@
 	function get_all_applicants(){
 
 		$link = open_database_connection();
-		$result = mysql_query('SELECT id,name,email,phone,about FROM applicants', $link);
+		$result = mysql_query('SELECT id,name,email,phone,about,rating FROM applicants', $link);
 
 		$posts = array();
 

@@ -27,7 +27,11 @@
 							<td> {{ item.email }} </td>
 							<td> {{ item.phone }} </td>
 							<td> {{ item.about }} </td>
-							<td> {{ item.rating }} </td>
+							<td>
+								{{ item.rating }}  
+								<a href="/upvote.php?id={{item.id}}"> <button class="btn btn-sm btn-success">+</button></a> 
+								<a href="/downvote.php?id={{item.id}}"> <button class="btn btn-sm btn-danger">-</button></a> 
+							</td>
 						</tr>
 					{% endfor %}
 					<h5>  Number of applicants: {{applicants|length}}</h5>
