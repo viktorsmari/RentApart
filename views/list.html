@@ -20,7 +20,7 @@
 							<th>Rating</th>
 						</tr>
 					</thead>
-					{% for item in posts %}
+					{% for item in applicants %}
 						<tr>
 							<td> {{ item.id  }} </td>
 							<td> {{ item.name  }} </td>
@@ -30,7 +30,7 @@
 							<td> {{ item.rating }} </td>
 						</tr>
 					{% endfor %}
-					<h5>  Number of applicants: {{posts|length}}</h5>
+					<h5>  Number of applicants: {{applicants|length}}</h5>
 				</table>
 			</div> {# End col12 #}
 		</div> {# End row #}

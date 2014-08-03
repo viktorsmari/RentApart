@@ -12,7 +12,7 @@
 		mysql_close($link);
 	}
 
-	function get_all_posts(){
+	function get_all_applicants(){
 
 		$link = open_database_connection();
 		$result = mysql_query('SELECT id,name,email,phone,about FROM applicants', $link);
@@ -24,11 +24,11 @@
 		}
 
 		close_database_connection($link);
-		
+
 		return $posts;
 	}
 
-	function get_post_by_id($id){
+	function get_applicant_by_id($id){
 		$link = open_database_connection();
 		$query = 'SELECT name, email,phone, about FROM applicants where id = '.$id;
 
