@@ -13,7 +13,7 @@
 	// print_r($posts);
 	
 	// Hardcoded array, 
-	// TODO: put in database, create table for multiple houses
+	// TODO: create houses table in database.
 	$apartment = array(
 		'city' => 'Reykjavik',
 		'areacode' => '101',

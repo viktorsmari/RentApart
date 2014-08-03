@@ -16,32 +16,21 @@
 						<th>About</th>
 					</tr>
 				</thead>
+
 				<tr>
-					{% for item in posts %}
-					{{item}}
-						<td> {{ item.name  }} </td>
-						<td> {{ email }} </td>
-						<td> {{ phone }} </td>
-						<td> {{ about }} </td>
+					{{id}} {{email}}
+					{% for i in id %}
+					ja
+						{% for item in i %}
+							<td> {{ item.id  }} </td>
+							<td> {{ item.email }} </td>
+							<td> {{ item.phone }} </td>
+							<td> {{ item.about }} </td>
+						{% endfor %}
 					{% endfor %}
 				</tr>
 			</table>
-
-<hr>
-			{% set fields = [ 
-				{'name': 'description', 'value':  '1'},
-			 	{ 'name': 'abc', 'value': '2'},
-			 	{ 'name':'tags', 'value': '3'} 
-			] %}
-
-			{% for i in fields %}
-				{{i.name }} {{i.value}}
-			{% endfor %}
-
 		</div>
 	</div>
-
-
-
 </body>
 </html>

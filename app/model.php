@@ -15,21 +15,16 @@
 	function get_all_posts(){
 
 		$link = open_database_connection();
-
 		$result = mysql_query('SELECT id,name,email,phone,about FROM applicants', $link);
-		$row_cnt = mysql_num_rows($result);
 
 		$posts = array();
 
 		while ($row = mysql_fetch_assoc($result)) {
 			$posts[] = $row;
-
 		}
 
-		echo "Number of applicants so far: " . $row_cnt;
-
 		close_database_connection($link);
-
+		
 		return $posts;
 	}
 

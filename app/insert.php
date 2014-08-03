@@ -4,8 +4,15 @@
 	$safe_email = mysql_real_escape_string($_POST["InputEmail"]);
 	$safe_phone = mysql_real_escape_string($_POST["InputPhone"]);
 	$safe_about = mysql_real_escape_string($_POST["InputAbout"]);
+	// The other way would be to use prepared statements or use PDO
 
-	// Connect the manual way 
+	// PHP email validation. I guess I would do that one client side using JS
+	if (filter_var($safe_email, FILTER_VALIDATE_EMAIL) == false){
+		echo "Email was not in the correct form! </br>";
+		// But we still continue...
+	}
+
+	// Connect  
 	$con = mysqli_connect('localhost', 'rentmaster', 'rentmaster', 'rent');
 
 	// Check if connection is successful
@@ -13,13 +20,13 @@
 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	// Commands
+	// SQL Commands
 	$sql = "INSERT INTO applicants (name,email,phone,about) VALUES ('$safe_name' , '$safe_email', '$safe_phone', '$safe_about') ";
 
 	if (mysqli_query($con, $sql)){
 		echo "Your submission has been received " . $safe_name;
 	} else {
-		echo "Error: " . mysqli_error($con);
+		echo "Something went wrong: " . mysqli_error($con);
 	}
 
 	mysqli_close($con);
