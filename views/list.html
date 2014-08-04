@@ -19,7 +19,7 @@
 							<th>Phone</th>
 							<th>About</th>
 							<th>Rating</th>
-							<th>Vote</th>
+							<th>Vote / Del</th>
 						</tr>
 					</thead>
 					{% for item in applicants %}
@@ -32,7 +32,8 @@
 							<td> {{ item.rating }} </td>
 								<td>
 								<a href="upvote.php?id={{item.id}}" class="btn btn-sm btn-success"> + </a> 
-								<a href="downvote.php?id={{item.id}}" class="btn btn-sm btn-danger">-</a> 
+								<a href="downvote.php?id={{item.id}}" class="btn btn-sm btn-info">-</a> 
+								<a href="delete.php?id={{item.id}}" class="btn btn-sm btn-danger"> X </a> 
 							</td>
 						</tr>
 					{% endfor %}
