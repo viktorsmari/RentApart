@@ -25,13 +25,17 @@
 	// SQL Commands
 	$sql = "INSERT INTO applicants (name,email,phone,about,rating) VALUES ('$safe_name' , '$safe_email', '$safe_phone', '$safe_about',0) ";
 
-	// Make query and post if error
-	if (mysqli_query($link, $sql)){
-		echo "Your submission has been received " . $safe_name;
-		echo "<br /><a href='app.php'>Go back</a>";
-	} else {
-		echo "Something went wrong: " . mysqli_error($link);
-	}
+	// Prevent noone goes directly to "insert.php" to input an empty record
+	if (strlen($safe_email) > 3){
 
-	mysqli_close($link);
+		// Make query and post if error
+		if (mysqli_query($link, $sql)){
+			echo "Your submission has been received " . $safe_name;
+			echo "<br /><a href='app.php'>Go back</a>";
+		} else {
+			echo "Something went wrong: " . mysqli_error($link);
+		}
+
+		mysqli_close($link);
+	}
 ?>
